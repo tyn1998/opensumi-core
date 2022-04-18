@@ -3,6 +3,8 @@ require('jest-canvas-mock');
 // packages/extension/__tests__/browser/main.thread.env.test.ts
 // MainThreadEnvAPI Test Suites  › can read/write text via clipboard
 let text = '';
+global.IS_REACT_ACT_ENVIRONMENT = true;
+
 window.navigator = Object.assign(window.navigator, {
   clipboard: {
     writeText(value) {
