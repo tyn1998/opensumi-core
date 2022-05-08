@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "commander": "^8.1.0",
-    "got": "^11.8.2",
+    "got": "^11.8.3",
     "chalk": "^4.1.2"
   },
   "devDependencies": {
