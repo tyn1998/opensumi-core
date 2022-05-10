@@ -382,6 +382,9 @@ export class MockProfileService implements ITerminalProfileService {
   ): IDisposable {
     return new Disposable();
   }
+  get onTerminalProfileResolved() {
+    return new Emitter<string>().event;
+  }
 }
 
 export class MockTerminalProfileInternalService implements ITerminalProfileInternalService {

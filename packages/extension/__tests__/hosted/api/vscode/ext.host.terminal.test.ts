@@ -164,7 +164,7 @@ describe(__filename, () => {
 
   it('extension terminal exit status should defined', () =>
     new Promise<void>(async (done) => {
-      mainThread['$createTerminal'] = () => Promise.resolve('fake-id-1');
+      mainThread['$createTerminal'] = () => Promise.resolve();
 
       mainThread['$sendProcessExit'] = () => {
         //

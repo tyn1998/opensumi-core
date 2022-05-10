@@ -28,6 +28,7 @@ import {
   ITerminalController,
   ITerminalGroupViewService,
   ITerminalInternalService,
+  ITerminalProfileInternalService,
   ITerminalProfileService,
   ITerminalService,
   ITerminalTheme,
@@ -57,9 +58,7 @@ import { MainThreadAPIIdentifier, ExtHostAPIIdentifier } from '../../../../src/c
 import { ExtHostTerminal } from '../../../../src/hosted/api/vscode/ext.host.terminal';
 import { ExtHostTasks } from '../../../../src/hosted/api/vscode/tasks/ext.host.tasks';
 
-
 import { CustomBuildTaskProvider } from './__mock__/taskProvider';
-
 
 const extension = mockExtensionProps;
 
@@ -98,6 +97,16 @@ describe('ExtHostTask API', () => {
           id: options.name,
         }),
       }),
+    },
+    {
+      token: ITerminalProfileInternalService,
+      useValue: {
+        resolveDefaultProfile: jest.fn(() => ({
+          profileName: 'bash',
+          path: '/local/bin/bash',
+          isDefault: true,
+        })),
+      },
     },
     {
       token: ITerminalService,
